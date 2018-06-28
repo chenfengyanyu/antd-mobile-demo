@@ -1,3 +1,9 @@
+### 使用技术
+- antd-mobile
+- react
+- umi
+- dva
+
 ### 安装依赖
 ```bash
 npm i
