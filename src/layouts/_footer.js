@@ -1,4 +1,5 @@
 import React from 'react';
+import router from 'umi/router';
 import { TabBar } from 'antd-mobile';
 
 class Footer extends React.Component {
@@ -11,10 +12,13 @@ class Footer extends React.Component {
     };
   }
 
+  gotoLink(name) {
+    router.push(`/${name}`);
+  }
+
   renderContent(pageText) {
     return (
       <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-       
       </div>
     );
   }
@@ -22,6 +26,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 50,position: 'fixed',width: '100%', bottom: 0,backgroundColor: 'white',zIndex:999}}>
+        
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#33A3F4"
@@ -49,6 +54,7 @@ class Footer extends React.Component {
               this.setState({
                 selectedTab: 'blueTab',
               });
+              this.gotoLink('');
             }}
             data-seed="logId"
           >
@@ -77,6 +83,7 @@ class Footer extends React.Component {
               this.setState({
                 selectedTab: 'redTab',
               });
+              this.gotoLink('temp');
             }}
             data-seed="logId1"
           >
@@ -105,6 +112,7 @@ class Footer extends React.Component {
               this.setState({
                 selectedTab: 'greenTab',
               });
+              this.gotoLink('users');
             }}
           >
             {this.renderContent('Friend')}
@@ -119,6 +127,7 @@ class Footer extends React.Component {
               this.setState({
                 selectedTab: 'yellowTab',
               });
+              this.gotoLink('info');
             }}
           >
             {this.renderContent('My')}

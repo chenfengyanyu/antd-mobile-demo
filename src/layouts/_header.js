@@ -1,4 +1,5 @@
 import { NavBar, Icon } from 'antd-mobile';
+import Link from 'umi/link';
 
 function Header({ location }) {
   return (
